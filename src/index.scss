@@ -1,0 +1,117 @@
+@use 'styles/variables' as *; // @import 'styles/variables' is old now
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+// ROOT VARIABLES
+:root {
+  font-family: $font-family-base;
+  line-height: $line-height;
+  font-weight: 400;
+  background-color: $color-purple;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// RESET
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// BASE BODY STYLES
+body {
+  min-height: $min-height;
+  line-height: $line-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// TYPOGRAPHY
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1,
+label,
+p {
+  color: $color-white;
+}
+
+// ELEMENTS
+input {
+  padding: $size;
+}
+
+button {
+  padding: $size calc(#{$size} * 2);
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin-bottom: calc(#{$size} + 5px);
+}
+
+// COMPONENTS
+.header {
+  padding: $size 0;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-bottom: $size;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: calc(#{$size} * 2);
+  box-sizing: border-box;
+
+  label {
+    margin-right: $size;
+
+    >input {
+      margin-right: $size;
+    }
+  }
+
+  .strike-through {
+    text-decoration: line-through;
+  }
+
+  >.form {
+    width: 100%;
+
+    input {
+      background-color: $color-white;
+      width: 100%;
+      height: calc(#{$size} * 3);
+      border-radius: $border-radius;
+      border: $border-grey;
+    }
+
+    button {
+      background-color: $color-white;
+      width: 100%;
+      border-radius: $border-radius;
+      text-align: center;
+      border: $border-grey;
+      color: $color-purple;
+    }
+  }
+}
